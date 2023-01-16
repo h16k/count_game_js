@@ -4,15 +4,15 @@ body{
   background-color: #eeece9;
 }
 
-h1{
+p{
   color: #3f5170;
-  font-size: 40px;
+  font-size: 80px;
   text-align: center;
-  line-height: 300px;
+  vertical-align: middle;
 }
 
-.ib{
-  display:inline;
-  border: solid 1px #454545;
-  border-radius: 5px;
+h2{
+  color: #3f5170;
+  font-size: 30px;
+  text-align: center;
 }
