@@ -6,13 +6,11 @@ var ctx = canvas.getContext("2d");
 var ballRadius = 10;
 
 //開始時のボールの座標
-let l = [[10,canvas.height/2], [canvas.width/2, 10], [canvas.width-10,canvas.height/2], [canvas.width/2,canvas.height-10]];
-let x,y;
-// let x = xl[Math.floor(Math.random() * xl.length)];
-// let y = yl[Math.floor(Math.random() * yl.length)];
+let x = 30;
+let y = canvas.height / 2;
 
 let dx = 2;
-let dy = 2;
+let dy = 0;
 
 function drawBall() {
     //描画開始
@@ -33,7 +31,7 @@ function draw(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
 
-    if (canvas.width / 2 - 50 < x && x < canvas.width / 2 + 50 && canvas.height / 2 - 50 < y && y < canvas.height / 2 + 50) {
+    if (canvas.width / 2 - 30 < x) {
         return true;
     }
     x += dx;
