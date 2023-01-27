@@ -7,21 +7,21 @@ let ballRadius = 15;
 let rectSize = 130;
 let ballSpeed = 3;
 
+let midx = canvas.width / 2;
+let midy = canvas.height / 2;
 let margin = 50;
 
 //開始時のボールの座標
-let spawn = [[margin, canvas.height / 2], [canvas.width / 2, margin], [canvas.width - margin, canvas.height / 2], [canvas.width / 2, canvas.height - margin]];
+let spawn = [[margin, midy], [midx, margin], [canvas.width - margin, midy], [midx, canvas.height - margin]];
 let direction = [[1,0],[0,1],[-1,0],[0,-1]];
 let x,y;
 let dx,dy;
 
 let s_wait, e_wait;
 
-let answer = 10;
+let answer;
 let count = 0;
 let timer;
-
-init();
 
 
 function init(){
@@ -36,7 +36,22 @@ function init(){
 }
 
 function startGame(){
+    answer = randNum(5);
     timer = setInterval(draw,30);
+
+}
+
+function quizText(){
+    let text = "How many balls are in the box?";
+    let fontSize = 36 ;
+
+    //文字のスタイル（大きさ、フォント）を指定
+	ctx.font = 'bold ' + fontSize + 'px serif';
+	//文字の色を指定
+	ctx.fillStyle = '#000000';
+    let textWidth = ctx.measureText( text ).width ;
+    ctx.fillText( text, (canvas.width - textWidth) / 2, canvas.height - fontSize ) ;
+
 }
 
 function drawBall() {
@@ -77,7 +92,7 @@ function draw(){
             init();
         }else{
             clearInterval(timer);
-
+            quizText();
         }
     }
 
@@ -87,3 +102,5 @@ function draw(){
 function randNum(max) {
 	return Math.floor(Math.random() * max);
 }
+
+init();
