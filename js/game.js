@@ -12,6 +12,8 @@ let y = canvas.height / 2;
 let dx = 2;
 let dy = 0;
 
+let timer = setInterval(draw,10);
+
 function drawBall() {
     //描画開始
     ctx.beginPath();
@@ -32,10 +34,9 @@ function draw(){
     drawBall();
 
     if (canvas.width / 2 - 30 < x) {
-        return true;
+        clearIntervals(timer);
     }
     x += dx;
     y += dy;
 }
 
-setInterval(draw,10);
