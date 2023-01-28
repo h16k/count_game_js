@@ -12,6 +12,10 @@ canvas.height = 4800;
 canvas.style.width = "600px";
 canvas.style.height = "480px";
 
+ctx.beginPath();
+ctx.fillStyle = '#98d98e';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
 //ボールの大きさを設定
 let ballRadius = 150;
 let rectSize = 1300;
@@ -76,7 +80,7 @@ function quizText(){
     //文字のスタイル（大きさ、フォント）を指定
 	ctx.font = 'bold ' + fontSize + 'px serif';
 	//文字の色を指定
-	ctx.fillStyle = '#000000';
+	ctx.fillStyle = '#ffffff';
     let textWidth = ctx.measureText( text ).width ;
     ctx.fillText( text, (canvas.width - textWidth) / 2, canvas.height - fontSize ) ;
 
@@ -101,7 +105,10 @@ function drawBall() {
 function draw(){
     //4つの座標で囲われた範囲内の内容がすべて消去される
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    ctx.beginPath();
+    ctx.fillStyle = '#98d98e';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.closePath();
     drawBall();
 
     if(s_wait == 0){

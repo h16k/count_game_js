@@ -1,5 +1,6 @@
 body{
     background-color: #a8c97f;
+    background-color: #98d98e;
     text-align: center;
 }
 
@@ -7,6 +8,7 @@ body{
     width: 100px;
     height: 50px;
     background-color: #69b076;
+    /* background-color: #98d98e; */
     color: white;
     border-style: none;
     border-radius: 10px;
