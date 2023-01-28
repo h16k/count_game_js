@@ -4,13 +4,21 @@
     <meta charset="utf-8" />
     <title>Count Game</title>
     <style>* { padding: 0; margin: 0; } canvas { background: #eee; display: block; margin: 0 auto; }</style>
-    <link rel="stylesheet" href="./../css/game.css">
+<link rel="stylesheet" href="./../css/game.css">
+
 </head>
 <body>
+    <!-- <ul>
+        <img class = "levelMenu" src="./../asset/game/easy.png" alt="easy" onclick = "setLevel(1);">
+        <img class = "levelMenu" src="./../asset/game/normal.png" alt="normal" onclick = "setLevel(2);">
+        <img class = "levelMenu" src="./../asset/game/hard.png" alt="hard" onclick = "setLevel(3);">
+    </ul> -->
+
 <canvas id="myCanvas"></canvas>
 
 <p id = "levelRadioButton"></p>
 <button onclick="startGame();" id = "startGame">Start</button>
 <script src="./../js/game.js"></script>
+
 </body>
 </html>

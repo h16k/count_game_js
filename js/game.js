@@ -1,6 +1,5 @@
 "use strict";
 
-
 //canvas情報を取得
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
@@ -16,9 +15,9 @@ canvas.style.height = "480px";
 //ボールの大きさを設定
 let ballRadius = 150;
 let rectSize = 1300;
-let ballSpeed = 30;
+let ballSpeed = 60;
 
-let level = [1, 2, 3];
+let levelList = [1, 2, 3];
 let levelText = ["easy","normal","hard"];
 
 let midx = canvas.width / 2;
@@ -49,22 +48,24 @@ function init(){
     count++;
 }
 
-function getLevel(){
-    let radioButtonsForLevel = document.getElementsByName('level');
-    for (let i in level) {
-		if (radioButtonsForLevel.item(i).checked) {
-			return radioButtonsForLevel.item(i).value;
+function getLevel() {
+	let levelButtons = document.getElementsByName('level');
+
+	//選択されている色を取得する
+	for (let i in levelList) {
+		if (levelButtons.item(i).checked) {
+			return levelButtons.item(i).value;
 		}
 	}
 }
 
 function startGame(){
-    changeElementVisibilityById("startGame");
     answer = randNum(getLevel() * 5);
-    // setTimeout(function(){
-        timer = setInterval(draw,30);
-        
-    // },100)
+
+    changeVisibilityById("startGame");
+    changeVisibilityById("levelRadioButton");
+
+    timer = setInterval(draw,30);
 
 }
 
@@ -130,21 +131,20 @@ function randNum(max) {
 	return Math.floor(Math.random() * max);
 }
 
-function changeElementVisibilityById(id){
+function changeVisibilityById(id){
     document.getElementById(id).classList.toggle('hidden');
 }
 
 window.onload = () => {
     init();
-	for (let i in level) {
+	for (let i in levelList) {
 		let levelRadioButton = document.getElementById('levelRadioButton');
 		levelRadioButton.innerHTML +=
 			`<input type="radio" 
 		id = "${levelText[i]}" 
 		name="level" 
-		value= ${level[i]}
-		onclick="changeLevel();">
-	<label for = "${level[i]}">${levelText[i]}</label>`;
+		value= ${levelList[i]}>
+	<label for = "${levelText[i]}"><img src="./../asset/game/${levelText[i]}.png" width="120" height="40"></label>`;
 	};
 
 	let defaultLevel = document.getElementById(`${levelText[1]}`);
