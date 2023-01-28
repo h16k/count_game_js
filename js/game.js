@@ -13,8 +13,6 @@ canvas.height = 4800;
 canvas.style.width = "600px";
 canvas.style.height = "480px";
 
-
-
 //ボールの大きさを設定
 let ballRadius = 150;
 let rectSize = 1300;
@@ -51,7 +49,6 @@ function init(){
     count++;
 }
 
-
 function getLevel(){
     let radioButtonsForLevel = document.getElementsByName('level');
     for (let i in level) {
@@ -64,7 +61,10 @@ function getLevel(){
 function startGame(){
     changeElementVisibilityById("startGame");
     answer = randNum(getLevel() * 5);
-    timer = setInterval(draw,30);
+    // setTimeout(function(){
+        timer = setInterval(draw,30);
+        
+    // },100)
 
 }
 
