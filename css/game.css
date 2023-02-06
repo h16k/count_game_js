@@ -35,8 +35,13 @@ body {
 
 button{
   font-family: "ZenMaruGothicRegular";
-  font-size: 17px;
+  font-size: 22px;
 
+}
+
+button:hover {
+    transform: scale(1.1, 1.1);
+    transition: 0.3s all;
 }
 
 /* ラジオボタンの○を消す */
