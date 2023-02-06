@@ -1,10 +1,23 @@
-body{
-    background-color: #a8c97f;
-    background-color: #98d98e;
+@font-face {
+    font-family: 'ZenMaruGothicRegular';
+    src: url('./../asset/fonts/ZenMaruGothic-Regular.ttf');
+
+}
+
+@font-face {
+    font-family: 'ZenMaruGothicMedium';
+    src: url('./../asset/fonts/ZenMaruGothic-Medium.ttf');
+}
+
+body {
+    font-family: "ZenMaruGothicRegular";
+    /* background-color: #a8c97f; */
+    /* background-color: #98d98e; */
+    background-color: #ffffff;
     text-align: center;
 }
 
-#startGame{
+#startGame {
     width: 100px;
     height: 50px;
     background-color: #69b076;
@@ -16,31 +29,38 @@ body{
 }
 
 
-.hidden{
-    display:none;
+.hidden {
+    display: none;
 }
 
+button{
+  font-family: "ZenMaruGothicRegular";
+  font-size: 17px;
+
+}
 
 /* ラジオボタンの○を消す */
 input[type="radio"] {
     display: none;
 }
+
 /* 画像の周りに隙間をあける */
 label img {
     margin: 3px;
     padding: 5px;
 }
 
-label img:hover{
-    transform:scale(1.1,1.1);
+label img:hover {
+    transform: scale(1.1, 1.1);
     transition: 0.3s all;
-  }
-/* 未選択の場合、色を薄くする */
-input[type="radio"] + label img {
-    opacity:0.5;
-  }
-/* 選択済みの場合、色を濃くする */
-input[type="radio"]:checked + label img {
-    opacity:1;
 }
 
+/* 未選択の場合、色を薄くする */
+input[type="radio"]+label img {
+    opacity: 0.5;
+}
+
+/* 選択済みの場合、色を濃くする */
+input[type="radio"]:checked+label img {
+    opacity: 1;
+}

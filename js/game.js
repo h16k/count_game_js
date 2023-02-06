@@ -8,8 +8,8 @@ canvas.width = 6000;
 canvas.height = 4800;
 
 //実際に表示されるキャンバスのサイズを指定する
-canvas.style.width = "600px";
-canvas.style.height = "480px";
+canvas.style.width = "800px";
+canvas.style.height = "640px";
 
 //ボールの大きさを設定
 let ballRadius = 150;
@@ -73,9 +73,11 @@ function quizText() {
     let fontSize = 360;
 
     //文字のスタイル（大きさ、フォント）を指定
-    ctx.font = 'bold ' + fontSize + 'px serif';
+    // ctx.font = 'bold ' + fontSize + 'px serif';
+	ctx.font = fontSize +'px ZenMaruGothicRegular';
+
     //文字の色を指定
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = '#000000';
     let textWidth = ctx.measureText(text).width;
     ctx.fillText(text, (canvas.width - textWidth) / 2, canvas.height - fontSize);
 
@@ -87,7 +89,8 @@ function drawBall() {
     //x,y座標、ballRadus、開始角度と終了角度、そして描く方向（ここでは省略されている。デフォルトはfalse=時計回り）
     ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
     //色の指定
-    ctx.fillStyle = "#0095DD";
+    // ctx.fillStyle = "#0095DD";#0095d9
+    ctx.fillStyle = "#0095d9";
     //塗りつぶす（stroke()を使うと縁だけ描ける）
     // ctx.stroke();
     ctx.fill();
@@ -98,7 +101,8 @@ function drawBall() {
 function drawBox() {
     //描画開始
     ctx.beginPath();
-    ctx.fillStyle = "#007bbb";
+    // ctx.fillStyle = "#007bbb";
+    ctx.fillStyle = "#a0d8ef";
 
     ctx.fillRect(canvas.width / 2 - rectSize / 2, canvas.height / 2 - rectSize / 2, rectSize, rectSize);
     ctx.closePath();
@@ -107,7 +111,8 @@ function drawBox() {
 
 function fillcanvas() {
     ctx.beginPath();
-    ctx.fillStyle = '#98d98e';
+    // ctx.fillStyle = '#98d98e';
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.closePath();
 }
