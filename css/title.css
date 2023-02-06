@@ -1,1 +1,61 @@
+/* Figmaを再現したもの */
+@charset "UTF-8";
 
+main{
+    width: 1242px;
+    margin: 200px auto;
+    max-width: 100%;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+}
+
+section{
+    height: 300px;
+    max-width: 100%;
+    text-align: center;
+    border-radius: 30px;
+    background: #A0D8EF;
+}
+
+h1{
+    margin: 0; /*タグのリセット*/
+    font-size: 110px;
+    color: white;
+    line-height: 300px;
+}
+
+a{
+    margin: 0; /*タグのリセット*/
+    text-decoration: none;
+    font-size: 70px;
+}
+
+button {
+    font-size: 90px;
+}
+
+button{
+    all: unset; /*ボタン部分のリセット*/
+    max-width: 100%;
+    background: #A8C97F;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    width: 780px;
+    height: 150px;
+    cursor: pointer;
+    box-shadow: 0 3px green;
+}
+
+button:hover{ /*マウスを合わせた時のスタイルを設定*/
+    opacity: .8; /*要素の透明度*/
+}
+
+button:active { /*要素がクリックされた時のスタイルを指定*/
+    box-shadow: 0 1px green;
+    transform: translateY(5px); /*ボタンを5px下に移動*/
+}
