@@ -181,7 +181,7 @@ window.onload = () => {
 		id = "${levelText[i]}" 
 		name="level" 
 		value= ${levelList[i]}>
-	<label for = "${levelText[i]}"><img src="./../asset/game/${levelText[i]}.png" width="120" height="40"></label>`;
+	<label for = "${levelText[i]}">${levelText[i]}</label>`;
     };
 
     let defaultLevel = document.getElementById(`${levelText[1]}`);
