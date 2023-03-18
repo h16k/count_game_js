@@ -188,6 +188,3 @@ window.onload = () => {
     defaultLevel.checked = true;
 };
 
-
-
-
